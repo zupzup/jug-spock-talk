@@ -1,3 +1,9 @@
 # jug-spock-talk
 JUG (http://www.juggraz.at/) - Talk on Spock
->>>>>>> 6c9e66211e89b849a26a8c1327bce20e9f06c5a3
+
+#Resources
+- https://code.google.com/p/spock/wiki/WhoIsUsingSpock
+- https://github.com/robfletcher/idiomatic-spock
+- /Users/mario/Downloads/tdd-spock-slides.pdf
+- http://www.slideshare.net/danielkolman1/spock-27942005
+- http://zeroturnaround.com/rebellabs/using-spock-to-test-groovy-and-java-applications/

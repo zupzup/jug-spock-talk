@@ -5,3 +5,4 @@ tmp/**
 node_modules/
 .sass-cache
 code-examples/.idea/
+code-examples/target/

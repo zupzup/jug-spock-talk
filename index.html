@@ -16,6 +16,7 @@
 
         <link rel="stylesheet" href="css/reveal.min.css">
         <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+        <link rel="stylesheet" href="css/custom.css">
 
         <!-- For syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -23,11 +24,11 @@
         <!-- If the query includes 'print-pdf', include the PDF print sheet -->
         <script>
             if( window.location.search.match( /print-pdf/gi ) ) {
-            var link = document.createElement( 'link' );
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = 'css/print/pdf.css';
-            document.getElementsByTagName( 'head' )[0].appendChild( link );
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
             }
         </script>
 
@@ -44,21 +45,25 @@
             <div class="slides">
                 <section>
                     <h1>Spock</h1>
-                    <h3></h3>
-                    <p>
-                        <small>Mario Zupan - @mzupzup</small>
-                    </p>
+                    <h4>Mario Zupan - @mzupzup</h4>
+                    <aside class="notes">
+                        Hello, I'm Mario, this is my twitter handle and I'm talking about the Spock testing framework today 
+                    </aside>
                 </section>
 
                 <section>
-                    <h2>Heads Up</h2>
-                    <p>
-                        reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-                        support for CSS 3D transforms to see it in its full glory.
-                    </p>
+                    <h2>About me</h2>
+                    <img class="leftcolumn" width="50%" height="50%" src="./img/me.jpg" alt="me">
+                    <ul class="rightcolumn">
+                        <li>@netconomy for 4 years</li>
+                        <li>~2.5 years of Java</li>
+                        <li>~1.5 years of JavaScript</li>
+                        <li></li>
+                    </ul>
 
                     <aside class="notes">
-                        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+                        @netconomy for 4 years, 3 years Java, 1 year JS
+                        Passionate about Software Craftsmanship
                     </aside>
                 </section>
 
@@ -72,17 +77,17 @@
                 <section>
                     <h2>Point of View</h2>
                     <p>
-                    Press <strong>ESC</strong> to enter the slide overview.
+                        Press <strong>ESC</strong> to enter the slide overview.
                     </p>
                     <p>
-                    Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+                        Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
                     </p>
                 </section>
 
                 <section>
                     <h2>Works in Mobile Safari</h2>
                     <p>
-                    Try it out! You can swipe through the slides and pinch your way to the overview.
+                        Try it out! You can swipe through the slides and pinch your way to the overview.
                     </p>
                 </section>
 
@@ -125,30 +130,30 @@
                 <section id="transitions">
                     <h2>Transition Styles</h2>
                     <p>
-                    You can select from different transitions, like: <br>
-                    <a href="?transition=cube#/transitions">Cube</a> -
-                    <a href="?transition=page#/transitions">Page</a> -
-                    <a href="?transition=concave#/transitions">Concave</a> -
-                    <a href="?transition=zoom#/transitions">Zoom</a> -
-                    <a href="?transition=linear#/transitions">Linear</a> -
-                    <a href="?transition=fade#/transitions">Fade</a> -
-                    <a href="?transition=none#/transitions">None</a> -
-                    <a href="?#/transitions">Default</a>
+                        You can select from different transitions, like: <br>
+                        <a href="?transition=cube#/transitions">Cube</a> -
+                        <a href="?transition=page#/transitions">Page</a> -
+                        <a href="?transition=concave#/transitions">Concave</a> -
+                        <a href="?transition=zoom#/transitions">Zoom</a> -
+                        <a href="?transition=linear#/transitions">Linear</a> -
+                        <a href="?transition=fade#/transitions">Fade</a> -
+                        <a href="?transition=none#/transitions">None</a> -
+                        <a href="?#/transitions">Default</a>
                     </p>
                 </section>
 
                 <section id="themes">
                     <h2>Themes</h2>
                     <p>
-                    Reveal.js comes with a few themes built in: <br>
-                    <a href="?#/themes">Default</a> -
-                    <a href="?theme=sky#/themes">Sky</a> -
-                    <a href="?theme=beige#/themes">Beige</a> -
-                    <a href="?theme=simple#/themes">Simple</a> -
-                    <a href="?theme=serif#/themes">Serif</a> -
-                    <a href="?theme=night#/themes">Night</a> <br>
-                    <a href="?theme=moon#/themes">Moon</a> -
-                    <a href="?theme=solarized#/themes">Solarized</a>
+                        Reveal.js comes with a few themes built in: <br>
+                        <a href="?#/themes">Default</a> -
+                        <a href="?theme=sky#/themes">Sky</a> -
+                        <a href="?theme=beige#/themes">Beige</a> -
+                        <a href="?theme=simple#/themes">Simple</a> -
+                        <a href="?theme=serif#/themes">Serif</a> -
+                        <a href="?theme=night#/themes">Night</a> <br>
+                        <a href="?theme=moon#/themes">Moon</a> -
+                        <a href="?theme=solarized#/themes">Solarized</a>
                     </p>
                     <p>
                     <small>
@@ -160,16 +165,16 @@
                 <section>
                     <h2>Global State</h2>
                     <p>
-                    Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-                    will be added as a class to the document element when the slide is open. This lets you
-                    apply broader style changes, like switching the background.
+                        Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+                        will be added as a class to the document element when the slide is open. This lets you
+                        apply broader style changes, like switching the background.
                     </p>
                 </section>
 
                 <section data-state="customevent">
                     <h2>Custom Events</h2>
                     <p>
-                    Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+                        Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
                     </p>
                     <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
     Reveal.addEventListener( 'customevent', function() {
@@ -182,7 +187,7 @@
                     <section data-background="#007777">
                         <h2>Slide Backgrounds</h2>
                         <p>
-                        Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
+                            Set <code>data-background="#007777"</code> on a slide to change the full page background to the given color. All CSS color formats are supported.
                         </p>
                         <a href="#" class="image navigate-down">
                             <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
@@ -287,8 +292,11 @@
                 </section>
 
                 <section>
-                    <h1>Thank You.</h1>
-                    <h3>@mzupzup</h3>
+                    <h1>Thank You</h1>
+                    <ul>
+                        <li>@mzupzup</li>
+                        <li><a href="https://github.com/zupzup/jug-spock-talk">https://github.com/zupzup/jug-spock-talk</a></li>
+                    </ul>
                 </section>
 
             </div>

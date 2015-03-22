@@ -1,0 +1,11 @@
+.rightcolumn {
+    float: right;
+}
+
+.leftcolumn {
+    float: left;
+}
+
+img {
+    border: 1px solid !important;
+}

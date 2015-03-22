@@ -1,9 +1,11 @@
 .rightcolumn {
     float: right;
+    max-width: 50%;
 }
 
 .leftcolumn {
     float: left;
+    max-width: 50%;
 }
 
 img {

@@ -151,6 +151,7 @@
                     <aside class="notes">
                         these are spock's greates benefits
                         i will go over them one by one
+                        and we will revisit them later
                         it is really easy to learn
                         it supports different ways of testing
                         and great expressiveness
@@ -160,30 +161,27 @@
                     </aside>
                 </section>
 
-                <section>
-                    <h2>Fantastic Ordered List</h2>
-                    <ol>
-                        <li>One is smaller than...</li>
-                        <li>Two is smaller than...</li>
-                        <li>Three!</li>
-                    </ol>
-                </section>
-
                 <section data-markdown>
                     <script type="text/template">
-                        ## Markdown support
-
-                        For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
+                        ## Code! 
                         ```
-                        <section data-markdown>
-                        ## Markdown support
+                        class HelloSpock extends spock.lang.Specification {
+                            def "length of Spock's and his friends' names"() {
+                                expect:
+                                name.size() == length
 
-                        For those of you who like that sort of thing.
-                        Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-                        </section>
+                                where:
+                                name     | length
+                                "Spock"  | 5
+                                "Kirk"   | 4
+                                "Scotty" | 6
+                            }
+                        } 
                         ```
                     </script>
+
+                    <aside class="notes">
+                    </aside>
                 </section>
 
                 <section id="transitions">

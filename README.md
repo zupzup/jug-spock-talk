@@ -7,6 +7,7 @@ JUG (http://www.juggraz.at/) - Talk on Spock
 - /Users/mario/Downloads/tdd-spock-slides.pdf
 - http://www.slideshare.net/danielkolman1/spock-27942005
 - http://zeroturnaround.com/rebellabs/using-spock-to-test-groovy-and-java-applications/
+- https://github.com/Bijnagte/spock-genesis
 
 # Running
 - grunt serve

@@ -13,3 +13,31 @@ JUG (http://www.juggraz.at/) - Talk on Spock
 - grunt serve
 - 's' - to open presenter mode
 
+# TODO Slides
+ @Shared resources
+ Blocks
+      setup
+      when
+      then
+      expect
+      cleanup
+      where
+ thrown
+ interactions (spys)
+ difference expect - when/then (pure vs sideeffects)
+ documentation features (::and) // given when then
+ failure reporting
+ data tables
+      various forms
+      unrolling
+      data pipes
+ Interaction-based-testing
+      mocks
+      cardinality [...1]
+      constraints
+      grouping (maybe)
+      spies / stubbing / partial mocks
+      groovy mocking -> static, constructor etc.
+ Extensions
+      timeout, stepwise, requires, ignores, autocleanup
+

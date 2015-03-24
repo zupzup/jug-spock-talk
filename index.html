@@ -165,7 +165,8 @@
                     <script type="text/template">
                         ## Code! 
                         ```
-                        class HelloSpock extends spock.lang.Specification {
+                        import spock.lang.*;
+                        class HelloSpock extends Specification {
                             def "length of Spock's and his friends' names"() {
                                 expect:
                                 name.size() == length

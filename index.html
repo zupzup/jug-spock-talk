@@ -318,6 +318,35 @@
 
                 <section data-markdown>
                     <script type="text/template">
+                        ## Blocks - And
+                        ```
+                        import spock.lang.*;
+                        class HelloSpock extends Specification {
+                            def "adds to the wallet" () {
+                                given: "there is a wallet"
+                                Wallet wallet = new Wallet()
+
+                                when: "100 euros are added"
+                                wallet.add(100)
+
+                                and: "another 100 euros are added"
+                                wallet.add(100)
+
+                                then: "there are 200 euros in the wallet"
+                                wallet.get() == 200
+                            }
+                        }
+                        ```
+                    </script>
+
+                    <aside class="notes">
+                        the and-block is just for documentation,
+                        all blocks can be documented
+                    </aside>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
                         ## Blocks - Cleanup
                         ```
                         import spock.lang.*;
@@ -446,40 +475,41 @@
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Shared Resources
-                        ```
-                        def "length of Spock's and his friends' names"() {
-                        }
-                        ```
-                    </script>
-
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
                         ## Exceptions
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        class StackSpec extends Specification {
+                            def "throws on pop when the stack is empty" () {
+                                given:
+                                stack = new Stack()
+
+                                when:
+                                stack.pop()
+
+                                then:
+                                thrown EmptyStackException
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        Exceptions, of course, can be handled as well
+                        and as could be expected
+                        there is also notThrown
                     </aside>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Documentation
+                        ## Shared Resources
                         ```
-                        def "length of Spock's and his friends' names"() {
-                        }
+                        @Shared resource = new ExpensiveResource()
                         ```
                     </script>
 
                     <aside class="notes">
+                        Another cool thing are shared resources,
+                        which shares the annotated resource between test methods
                     </aside>
                 </section>
 

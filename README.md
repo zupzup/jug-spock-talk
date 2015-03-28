@@ -14,19 +14,17 @@ JUG (http://www.juggraz.at/) - Talk on Spock
 - 's' - to open presenter mode
 
 # TODO Slides
- @Shared resources
- Blocks
+ Blocks [x]
       setup
       when
       then
       expect
       cleanup
       where
- thrown
- interactions (spys)
- difference expect - when/then (pure vs sideeffects)
- documentation features (::and) // given when then
- failure reporting
+ @Shared resources [x]
+ failure reporting [x]
+ thrown [x]
+ documentation features (::and) // given when then[x]
  data tables
       various forms
       unrolling

@@ -164,7 +164,7 @@
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Structure
+                        ## Test Class
                         ```
                         import spock.lang.*;
                         class HelloSpock extends Specification {
@@ -180,7 +180,7 @@
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Structure
+                        ## Test Case
                         ```
                         import spock.lang.*;
                         class HelloSpock extends Specification {
@@ -198,7 +198,7 @@
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Code! 
+                        ## Whole Test
                         ```
                         import spock.lang.*;
                         class HelloSpock extends Specification {
@@ -221,85 +221,155 @@
                         with an expect and where block
                         showcasing data tables which 
                         we'll get to later
+                        this is the expect/where syntax
                     </aside>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Blocks
+                        ## Blocks - Setup
                         ```
-                        def "length of Spock's and his friends' names"() {
-                            setup / when / then
+                        import spock.lang.*;
+                        class HelloSpock extends Specification {
+                            def "adds to the wallet" () {
+                                setup:
+                                Wallet wallet = new Wallet()
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        setup is used to create objects, mocks,
+                        spies, stubs etc.
                     </aside>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Blocks
+                        ## Blocks - Given
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        import spock.lang.*;
+                        class HelloSpock extends Specification {
+                            def "adds to the wallet" () {
+                                given:
+                                Wallet wallet = new Wallet()
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        given is the same as setup
+                        with behaviour driven syntax
                     </aside>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Blocks
+                        ## Blocks - When
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        import spock.lang.*;
+                        class HelloSpock extends Specification {
+                            def "adds to the wallet" () {
+                                given:
+                                Wallet wallet = new Wallet()
+
+                                when:
+                                wallet.add(100)
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        the when-block describes the stimulus of the test
+                        the action you really want to test
                     </aside>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Blocks
+                        ## Blocks - Then
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        import spock.lang.*;
+                        class HelloSpock extends Specification {
+                            def "adds to the wallet" () {
+                                given:
+                                Wallet wallet = new Wallet()
+
+                                when:
+                                wallet.add(100)
+
+                                then:
+                                wallet.get() == 100
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        the then-block is the
+                        response to the stimulus, where
+                        conditions, exceptions and interactions
+                        are evaluated
                     </aside>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Blocks
+                        ## Blocks - Cleanup
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        import spock.lang.*;
+                        class HelloSpock extends Specification {
+                            def "adds to the wallet" () {
+                                given:
+                                Wallet wallet = new Wallet()
+
+                                when:
+                                wallet.add(100)
+
+                                then:
+                                wallet.get() == 100
+
+                                cleanup:
+                                wallet.delete()
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        the cleanup method does exactly what is expected
                     </aside>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Blocks
+                        ## Blocks - Where
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        import spock.lang.*;
+                        class HelloSpock extends Specification {
+                            def "computing the maximum of two numbers"() {
+                              expect:
+                              Math.max(a, b) == c
+
+                              where:
+                              a << [5, 3]
+                              b << [1, 9]
+                              c << [5, 9]
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        where is always last in a test method and used
+                        for data tables
+                        this test for example, creates two versions of the test
+                        a = 5, then 3
+                        b = 1, then 9
+                        c = 5, then 9
                     </aside>
                 </section>
 

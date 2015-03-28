@@ -377,12 +377,20 @@
                     <script type="text/template">
                         ## Failure Reporting 
                         ```
-                        def "length of Spock's and his friends' names"() {
-                        }
+                        Condition not satisfied:
+
+                        max(a, b) == c
+                        |   |  |  |  |
+                        3   1  3  |  2
+                                  false
                         ```
                     </script>
 
                     <aside class="notes">
+                        spock's failure reporting is awesome
+                        it shows all values in an assertion as well
+                        as the outcome of the assertion
+                        this can make debugging tests obsolete
                     </aside>
                 </section>
 
@@ -390,12 +398,27 @@
                     <script type="text/template">
                         ## Failure Reporting 
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        class UnrollingTest extends Specification {
+                            @Unroll
+                            def "maximum of #left and #right 
+                                 is #maximum" (int left, int right, int maximum) {
+
+                                expect:
+                                Math.max(left, right) == maximum
+
+                                where:
+                                left | right | maximum
+                                1 | 3 | 2
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        This test shows unrolling, a very cool feature
+                        where the variables can be added to the name
+                        of the test, and their values will be shown
+                        in the error
                     </aside>
                 </section>
 
@@ -403,12 +426,21 @@
                     <script type="text/template">
                         ## Failure Reporting 
                         ```
-                        def "length of Spock's and his friends' names"() {
-                        }
+                        - maximum of 1 and 3 is 2   FAILED
+
+                         Condition not satisfied:
+
+                         Math.max(left, right) == maximum
+                              |   |     |      |  |
+                              3   1     3      |  2
+                                             false
                         ```
                     </script>
 
                     <aside class="notes">
+                        this can be seen here, the values
+                        of left, right and maximum
+                        are shown in the test-outcome
                     </aside>
                 </section>
 

@@ -134,6 +134,7 @@
                         for concise, easy to reuse code
                         closures, literals etc.
                         it's a nice fit for tooling and tests
+                        also, metaprogramming adds a lot of power
                     </aside>
                 </section>
 
@@ -163,28 +164,63 @@
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Code! 
+                        ## Structure
                         ```
                         import spock.lang.*;
                         class HelloSpock extends Specification {
-                            def "length of Spock's and his friends' names"() {
-                                expect:
-                                name.size() == length
+                            ...
+                        } 
+                        ```
+                    </script>
 
-                                where:
-                                name     | length
-                                "Spock"  | 5
-                                "Kirk"   | 4
-                                "Scotty" | 6
+                    <aside class="notes">
+                        a spock test class starts like this
+                    </aside>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Structure
+                        ```
+                        import spock.lang.*;
+                        class HelloSpock extends Specification {
+                            def "adds two numbers" () {
+                                ...
                             }
                         } 
                         ```
                     </script>
 
                     <aside class="notes">
-                        Basic spock test
-                        extends Specification
-                        expect - where
+                        test cases are named like this
+                    </aside>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Code! 
+                        ```
+                        import spock.lang.*;
+                        class HelloSpock extends Specification {
+                            def "adds two numbers" () {
+                                expect:
+                                add(a, b) == c
+
+                                where:
+                                a | b || c
+                                1 | 7 || 8
+                                4 | 4 || 8
+                                7 | 1 || 8
+                            }
+                        } 
+                        ```
+                    </script>
+
+                    <aside class="notes">
+                        this is a whole test
+                        with an expect and where block
+                        showcasing data tables which 
+                        we'll get to later
                     </aside>
                 </section>
 

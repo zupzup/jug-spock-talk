@@ -32,6 +32,7 @@ JUG (http://www.juggraz.at/) - Talk on Spock
       unrolling
       data pipes
  Interaction-based-testing
+      ordered interactions
       mocks
       cardinality [...1]
       constraints

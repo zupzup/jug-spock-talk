@@ -749,64 +749,24 @@
                     <script type="text/template">
                         ## Stubbing
                         ```
+                        cache.get(_) >> new Product('123')
+                        cache.get('123') >> new Product('123')
+                        cache.get('789') >> new Product('789')
+
+                        cache.get(_) >> [new Product('789'), new Product('123')] // multiple
+
+                        // compute return value
+                        cache.get(_) >> { args -> args[0] == '123' ? new Product('123') : null}
+
+                        cache.get(_) >> { throw new NoCacheActiveException() }
+                        // closures can be chained as well
                         ```
                     </script>
 
                     <aside class="notes">
                         to create stubs, methods which return fake
-                        values
-                    </aside>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Constraints 
-                        ```
-                        def "length of Spock's and his friends' names"() {
-                        }
-                        ```
-                    </script>
-
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Constraints 
-                        ```
-                        def "length of Spock's and his friends' names"() {
-                        }
-                        ```
-                    </script>
-
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Constraints 
-                        ```
-                        def "length of Spock's and his friends' names"() {
-                        }
-                        ```
-                    </script>
-
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Grouping
-                        ```
-                        def "length of Spock's and his friends' names"() {
-                        }
-                        ```
-                    </script>
-
-                    <aside class="notes">
+                        values, spock provides really nice, concise syntax
+                        Of course, mocks and stubbing can be used together
                     </aside>
                 </section>
 
@@ -814,44 +774,74 @@
                     <script type="text/template">
                         ## Spies
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        class InteractionTest extends Specification {
+                            def "" () {
+                                given:
+                                cache = Spy(Cache)
+
+                                when:
+                                productService.getProduct('123') // calls the real cache inside
+
+                                then:
+                                1 * cache.get('products', '123')
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        a spy is based on a real method on a real object,
+                        it basically just calls the real method, but records
+                        interactions
+                        spies can also be stubbed, and in a closure
+                        they can call the real method and be extended,
+                        this is how partial mocks can be created
                     </aside>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Partial Mocks 
-                        ```
-                        def "length of Spock's and his friends' names"() {
-                        }
-                        ```
+                        <h2>Groovy Special!</h2>
+                        <ul>
+                            <li>Mock Constructors</li>
+                            <li>Mock Statics</li>
+                            <li>All-Instance-Mocking</li>
+                            <li>For Java -> Powermock</li>
+                        </ul>
                     </script>
 
                     <aside class="notes">
-                    </aside>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Groovy Mocks 
-                        ```
-                        def "length of Spock's and his friends' names"() {
-                        }
-                        ```
-                    </script>
-
-                    <aside class="notes">
+                        up until now, everything works for both
+                        groovy and java
+                        For Groovy, spock can do about anything, where
+                        java needs powermock, which rewrites bytecode under the hood
                     </aside>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
                         ## Extensions 
+                        - @Ignore / @IgnoreRest / @IgnoreIf()
+                        - @Requires()
+                        - @Stepwise
+                        - @AutoCleanup
+                        - @Timeout()
+                        - @Subject / @Issue / @Title / @Narrative
+                    </script>
+
+                    <aside class="notes">
+                        there are cool annotations in spock
+                        multiple ways to ignore a test, or the rest, as well
+                        as conditional ignorance of a test
+                        requires-clauses, for integration etc., Timeouts
+                        and Stepwise, which executes cases in the defined order
+                        Also can be extended
+                    </aside>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Wrap-Up
                         - a
                         - b
                         - c
@@ -876,18 +866,6 @@
                 <section data-markdown>
                     <script type="text/template">
                         ## Future 
-                        - a
-                        - b
-                        - c
-                    </script>
-
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Wrap-Up
                         - a
                         - b
                         - c

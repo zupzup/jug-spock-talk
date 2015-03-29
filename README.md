@@ -29,16 +29,15 @@ JUG (http://www.juggraz.at/) - Talk on Spock
       various forms [x]
       unrolling [x]
       data pipes [x]
- Interaction-based-testing
+ Interaction-based-testing [x]
       mocks [x]
       cardinality [...1] [x]
       constraints [x]
-      ordered interactions
-      grouping (maybe)
-      spies / stubbing / partial mocks
-      groovy mocking -> static, constructor etc.
- Extensions
-      timeout, stepwise, requires, ignores, autocleanup
+      ordered interactions [x]
+      spies / stubbing / partial mocks [x]
+      groovy mocking -> static, constructor etc. [x]
+ Extensions [x]
+      timeout, stepwise, requires, ignores, autocleanup [x]
 
       ...
       Installation

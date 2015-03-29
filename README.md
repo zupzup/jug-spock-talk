@@ -2,8 +2,9 @@
 JUG (http://www.juggraz.at/) - Talk on Spock
 
 # Slides
-- PDF
+- PDF (font is slightly off)
 - HTML
+    - open index.html
     - grunt serve
 
 # Resources

@@ -94,6 +94,7 @@
                         Alright - Spock
                         the spock testing framework was
                         named after spock, who unfortunately died a month ago
+                        it also means Specification - Mock
                     </aside>
                 </section>
 
@@ -162,7 +163,7 @@
                     </aside>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Test Class
                         ```
@@ -171,14 +172,12 @@
                             ...
                         } 
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         a spock test class starts like this
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Test Case
                         ```
@@ -189,14 +188,13 @@
                             }
                         } 
                         ```
+                        Note:
+                        test cases are named like this
                     </script>
 
-                    <aside class="notes">
-                        test cases are named like this
-                    </aside>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Whole Test
                         ```
@@ -214,18 +212,16 @@
                             }
                         } 
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         this is a whole test
                         with an expect and where block
                         showcasing data tables which 
                         we'll get to later
                         this is the expect/where syntax
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Blocks - Setup
                         ```
@@ -237,15 +233,13 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         setup is used to create objects, mocks,
                         spies, stubs etc.
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Blocks - Given
                         ```
@@ -257,15 +251,13 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         given is the same as setup
                         with behaviour driven syntax
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Blocks - When
                         ```
@@ -280,15 +272,13 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         the when-block describes the stimulus of the test
                         the action you really want to test
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Blocks - Then
                         ```
@@ -306,17 +296,15 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         the then-block is the
                         response to the stimulus, where
                         conditions, exceptions and interactions
                         are evaluated
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Blocks - And
                         ```
@@ -337,15 +325,13 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         the and-block is just for documentation,
                         all blocks can be documented
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Blocks - Cleanup
                         ```
@@ -366,14 +352,12 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         the cleanup method does exactly what is expected
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Blocks - Where
                         ```
@@ -390,19 +374,17 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         where is always last in a test method and used
                         for data tables
                         this test for example, creates two versions of the test
                         a = 5, then 3
                         b = 1, then 9
                         c = 5, then 9
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Failure Reporting 
                         ```
@@ -413,17 +395,15 @@
                         3   1  3  |  2
                                   false
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         spock's failure reporting is awesome
                         it shows all values in an assertion as well
                         as the outcome of the assertion
                         this can make debugging tests obsolete
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Failure Reporting 
                         ```
@@ -441,17 +421,15 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         This test shows unrolling, a very cool feature
                         where the variables can be added to the name
                         of the test, and their values will be shown
                         in the error
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Failure Reporting 
                         ```
@@ -464,16 +442,14 @@
                               3   1     3      |  2
                                              false
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         this can be seen here, the values
                         of left, right and maximum
                         are shown in the test-outcome
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Exceptions
                         ```
@@ -490,30 +466,26 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         Exceptions, of course, can be handled as well
                         and as could be expected
                         there is also notThrown
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Shared Resources
                         ```
                         @Shared resource = new ExpensiveResource()
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         Another cool thing are shared resources,
                         which shares the annotated resource between test methods
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Data Tables 
                         ```
@@ -530,18 +502,16 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         data tables are one of the great
                         features of spock, in the where block
                         you can specify variable's values
                         and each of the values is evaluated
                         in a seperate iteration
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Data Tables 
                         ```
@@ -557,14 +527,12 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         it can also be written like this
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Data Tables 
                         ```
@@ -580,16 +548,14 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         or in general, just executing code
                         you can also combine the different approaches
-                    </aside>
+                    </script>
                 </section>
 
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Data Tables 
                         ```
@@ -610,16 +576,14 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         a great real-life use-case are functions
                         taking an array, you usually want the 0-case,
                         the 1-case and the many-case as well as null
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Interaction Based Testing 
                         ```
@@ -638,19 +602,17 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         Interaction-based testing focuses on an object's
                         behaviour instead of state, it deals with their
                         interactions using mocks, stubs and spies
                         the example shows some productservice
                         which goes to a cache
                         the amount is checked in a very nice way
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Cardinality
                         ```
@@ -663,9 +625,7 @@
 
                         _ * cache.get('products', '123')
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         there are different ways to check
                         how often a method was invoked
                         5 times
@@ -674,10 +634,10 @@
                         1 to x times
                         x to 5 times
                         any number of times, including zero
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Constraints
                         ```
@@ -693,17 +653,15 @@
                         1 * cache.get('products', _) // any code
                         1 * cache.get(*_) // any list of arguments
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         mocks can also be validated using wildcards
                         for example, this shows that SOME mock's get
                         method was called
                         go through examples
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Order
                         ```
@@ -716,15 +674,13 @@
                         then:
                         1 * cache.get('images', '123')
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         to check the order of invocations
                         just use multiple then-blocks
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Scope
                         ```
@@ -740,15 +696,13 @@
                         then:
                         cache.get('products', '789')
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         the scope of an invocation block in then
                         is limited to the preceding when block
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Stubbing
                         ```
@@ -764,16 +718,14 @@
                         cache.get(_) >> { throw new NoCacheActiveException() }
                         // closures can be chained as well
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         to create stubs, methods which return fake
                         values, spock provides really nice, concise syntax
                         Of course, mocks and stubbing can be used together
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Spies
                         ```
@@ -790,36 +742,32 @@
                             }
                         }
                         ```
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         a spy is based on a real method on a real object,
                         it basically just calls the real method, but records
                         interactions
                         spies can also be stubbed, and in a closure
                         they can call the real method and be extended,
                         this is how partial mocks can be created
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Groovy Specials
                         - Mock Constructors
                         - Mock Statics
                         - All-Instance-Mocking
                         - For Java -> Powermock
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         up until now, everything works for both
                         groovy and java
                         For Groovy, spock can do about anything, where
                         java needs powermock, which rewrites bytecode under the hood
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Extensions 
                         - @Ignore / @IgnoreRest / @IgnoreIf()
@@ -829,19 +777,17 @@
                         - @Timeout()
                         - @Subject / @Issue / @Title / @Narrative
                         - Spock-Genesis
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         there are cool annotations in spock
                         multiple ways to ignore a test, or the rest, as well
                         as conditional ignorance of a test
                         requires-clauses, for integration etc., Timeouts
                         and Stepwise, which executes cases in the defined order
                         Also can be extended
-                    </aside>
+                    </script>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Integrations 
                         - Spring Framework
@@ -851,22 +797,17 @@
                         - Eclipse
                         - Intellij
                     </script>
-
-                    <aside class="notes">
-                    </aside>
                 </section>
 
-                <section data-markdown>
+                <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
                         ## Wrap-Up
-                    </script>
-
-                    <aside class="notes">
+                        Note:
                         spock is great - all in one
                         specs - mocks - spies - data tables
                         - groovy - documentation features
                         extremely concise syntax
-                    </aside>
+                    </script>
                 </section>
 
                 <section>

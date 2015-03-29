@@ -623,38 +623,138 @@
                     <script type="text/template">
                         ## Interaction Based Testing 
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        class InteractionTest extends Specification {
+                            def "" () {
+                                given:
+                                ProductService productService = new ProductService()
+                                Cache cache = Mock()
+                                productService.setCache(cache)
+
+                                when:
+                                productService.getProduct('123')
+
+                                then:
+                                1 * cache.get('products', '123')
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        Interaction-based testing focuses on an object's
+                        behaviour instead of state, it deals with their
+                        interactions using mocks, stubs and spies
+                        the example shows some productservice
+                        which goes to a cache
+                        the amount is checked in a very nice way
                     </aside>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Mocks 
+                        ## Cardinality
                         ```
-                        def "length of Spock's and his friends' names"() {
-                        }
+                        5 * cache.get('products', '123')
+                        0 * cache.get('products', '123')
+                        (1..5) * cache.get('products', '123')
+                        (1.._) * cache.get('products', '123')
+                        (_..5) * cache.get('products', '123')
+                        _ * cache.get('products', '123')
                         ```
                     </script>
 
                     <aside class="notes">
+                        there are different ways to check
+                        how often a method was invoked
+                        5 times
+                        zero times
+                        1 to 5 times
+                        1 to x times
+                        x to 5 times
+                        any number of times, including zero
                     </aside>
                 </section>
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Cardinality 
+                        ## Constraints
                         ```
-                        def "length of Spock's and his friends' names"() {
-                        }
+                        1 * _.get()
+                        1 * cache./get.*s/("123") // getProducts, getArticles
+                        1 * cache._('products', '123') // any method on cache
+
+                        1 * cache.get('products', '123') // normal
+                        1 * cache.get('products', '!123') // not '123'
+                        1 * cache.get('products', _ as String) // any string
+                        1 * cache.get('products', {it.size() > 2}) // any string longer than 2
+                        1 * cache.get('products', _) // any code
+                        1 * cache.get(*_) // any list of arguments
                         ```
                     </script>
 
                     <aside class="notes">
+                        mocks can also be validated using wildcards
+                        for example, this shows that SOME mock's get
+                        method was called
+                        go through examples
+                    </aside>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Order
+                        ```
+                        when:
+                        productService.getArticle('123')
+
+                        then:
+                        1 * cache.get('products', '123')
+
+                        then:
+                        1 * cache.get('images', '123')
+                        ```
+                    </script>
+
+                    <aside class="notes">
+                        to check the order of invocations
+                        just use multiple then-blocks
+                    </aside>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Scope
+                        ```
+                        when:
+                        productService.getProduct('123')
+
+                        then:
+                        cache.get('products', '123')
+
+                        when:
+                        productService.getProduct('789')
+
+                        then:
+                        cache.get('products', '789')
+                        ```
+                    </script>
+
+                    <aside class="notes">
+                        the scope of an invocation block in then
+                        is limited to the preceding when block
+                    </aside>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Stubbing
+                        ```
+                        ```
+                    </script>
+
+                    <aside class="notes">
+                        to create stubs, methods which return fake
+                        values
                     </aside>
                 </section>
 
@@ -803,6 +903,13 @@
                         <li>@mzupzup</li>
                         <li><a href="https://github.com/zupzup/jug-spock-talk">https://github.com/zupzup/jug-spock-talk</a></li>
                     </ul>
+                    <aside class="notes">
+                        So, this was a short overview, I hope
+                        I could interest you in trying out spock
+                        this is my twitter and a link where i will put
+                        up my slides and some resources.
+                        That's all i got, thanks.
+                    </aside>
                 </section>
 
             </div>

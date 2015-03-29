@@ -30,10 +30,10 @@ JUG (http://www.juggraz.at/) - Talk on Spock
       unrolling [x]
       data pipes [x]
  Interaction-based-testing
+      mocks [x]
+      cardinality [...1] [x]
+      constraints [x]
       ordered interactions
-      mocks
-      cardinality [...1]
-      constraints
       grouping (maybe)
       spies / stubbing / partial mocks
       groovy mocking -> static, constructor etc.

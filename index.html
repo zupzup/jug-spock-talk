@@ -656,9 +656,11 @@
                         ```
                         5 * cache.get('products', '123')
                         0 * cache.get('products', '123')
+
                         (1..5) * cache.get('products', '123')
                         (1.._) * cache.get('products', '123')
                         (_..5) * cache.get('products', '123')
+
                         _ * cache.get('products', '123')
                         ```
                     </script>
@@ -687,6 +689,7 @@
                         1 * cache.get('products', '!123') // not '123'
                         1 * cache.get('products', _ as String) // any string
                         1 * cache.get('products', {it.size() > 2}) // any string longer than 2
+
                         1 * cache.get('products', _) // any code
                         1 * cache.get(*_) // any list of arguments
                         ```
@@ -775,7 +778,7 @@
                         ## Spies
                         ```
                         class InteractionTest extends Specification {
-                            def "" () {
+                            def "calls real methods" () {
                                 given:
                                 cache = Spy(Cache)
 
@@ -801,13 +804,11 @@
 
                 <section data-markdown>
                     <script type="text/template">
-                        <h2>Groovy Special!</h2>
-                        <ul>
-                            <li>Mock Constructors</li>
-                            <li>Mock Statics</li>
-                            <li>All-Instance-Mocking</li>
-                            <li>For Java -> Powermock</li>
-                        </ul>
+                        ## Groovy Special!
+                        - Mock Constructors
+                        - Mock Statics
+                        - All-Instance-Mocking
+                        - For Java -> Powermock
                     </script>
 
                     <aside class="notes">
@@ -841,22 +842,13 @@
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Wrap-Up
-                        - a
-                        - b
-                        - c
-                    </script>
-
-                    <aside class="notes">
-                    </aside>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
                         ## Integrations 
-                        - a
-                        - b
-                        - c
+                        - Spring Framework
+                        - Tapestry
+                        - Guice
+                        - Grails
+                        - Eclipse
+                        - Intellij
                     </script>
 
                     <aside class="notes">
@@ -865,13 +857,14 @@
 
                 <section data-markdown>
                     <script type="text/template">
-                        ## Future 
-                        - a
-                        - b
-                        - c
+                        ## Wrap-Up
                     </script>
 
                     <aside class="notes">
+                        spock is great - 
+                        specs - mocks - spies - data tables
+                        property based testing - groovy
+                        concise syntax - 
                     </aside>
                 </section>
 

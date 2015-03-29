@@ -517,10 +517,27 @@
                     <script type="text/template">
                         ## Data Tables 
                         ```
+                        class DataDriven extends Specification {
+                            def "maximum of two numbers"() {
+                                expect:
+                                Math.max(a, b) == c
+
+                                where:
+                                a | b || c
+                                3 | 5 || 5
+                                7 | 0 || 7
+                                0 | 0 || 0
+                            }
+                        }
                         ```
                     </script>
 
                     <aside class="notes">
+                        data tables are one of the great
+                        features of spock, in the where block
+                        you can specify variable's values
+                        and each of the values is evaluated
+                        in a seperate iteration
                     </aside>
                 </section>
 
@@ -528,12 +545,22 @@
                     <script type="text/template">
                         ## Data Tables 
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        class DataDriven extends Specification {
+                            def "maximum of two numbers"() {
+                                expect:
+                                Math.max(a, b) == c
+
+                                where:
+                                a << [3, 7, 0]
+                                b << [5, 0, 0]
+                                c << [5, 7, 0]
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        it can also be written like this
                     </aside>
                 </section>
 
@@ -541,38 +568,54 @@
                     <script type="text/template">
                         ## Data Tables 
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        class DataDriven extends Specification {
+                            def "maximum of two numbers"() {
+                                expect:
+                                Math.max(a, b) == c
+
+                                where:
+                                a = 3
+                                b = Math.random() * 100
+                                c = a > b ? a : b
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
+                        or in general, just executing code
+                        you can also combine the different approaches
                     </aside>
                 </section>
 
+
                 <section data-markdown>
                     <script type="text/template">
-                        ## Unrolling
+                        ## Data Tables 
                         ```
-                        def "length of Spock's and his friends' names"() {
+                        class DataDriven extends Specification {
+                            def "transform numbers" () {
+                                given:
+                                NumTransformer trans = new NumTransformer()
+
+                                expect:
+                                trans.transform(arr) == res
+
+                                where:
+                                arr       || res
+                                null      || null
+                                []        || [] 
+                                [1]       || [2]
+                                [1, 2, 3] || [2, 3, 4]
+                            }
                         }
                         ```
                     </script>
 
                     <aside class="notes">
-                    </aside>
-                </section>
-
-                <section data-markdown>
-                    <script type="text/template">
-                        ## Data Pipes
-                        ```
-                        def "length of Spock's and his friends' names"() {
-                        }
-                        ```
-                    </script>
-
-                    <aside class="notes">
+                        a great real-life use-case are functions
+                        taking an array, you usually want the 0-case,
+                        the 1-case and the many-case as well as null
                     </aside>
                 </section>
 

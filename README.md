@@ -25,10 +25,10 @@ JUG (http://www.juggraz.at/) - Talk on Spock
  failure reporting [x]
  thrown [x]
  documentation features (::and) // given when then[x]
- data tables
-      various forms
-      unrolling
-      data pipes
+ data tables [x]
+      various forms [x]
+      unrolling [x]
+      data pipes [x]
  Interaction-based-testing
       ordered interactions
       mocks

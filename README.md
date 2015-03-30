@@ -18,4 +18,6 @@ JUG (http://www.juggraz.at/) - Talk on Spock
 - https://github.com/Bijnagte/spock-genesis
 - http://meetspock.appspot.com/scripts
 - http://www.manning.com/kapelonis/
-
+- https://github.com/grails/grails-core
+- https://github.com/gradle/gradle
+- https://github.com/Netflix/asgard

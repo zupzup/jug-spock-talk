@@ -678,28 +678,6 @@
 
                 <section data-markdown  data-separator-notes="^Note:">
                     <script type="text/template">
-                        ## Scope
-                        ```
-                        when:
-                        productService.getProduct('123')
-
-                        then:
-                        cache.get('products', '123')
-
-                        when:
-                        productService.getProduct('789')
-
-                        then:
-                        cache.get('products', '789')
-                        ```
-                        Note:
-                        the scope of an invocation block in then
-                        is limited to the preceding when block
-                    </script>
-                </section>
-
-                <section data-markdown  data-separator-notes="^Note:">
-                    <script type="text/template">
                         ## Stubbing
                         ```
                         cache.get(_) >> new Product('123')
@@ -833,7 +811,7 @@
             // Full list of configuration options available here:
             // https://github.com/hakimel/reveal.js#configuration
             Reveal.initialize({
-            controls: true,
+            controls: false,
             slideNumber: true,
             keyboard: true,
             progress: true,
